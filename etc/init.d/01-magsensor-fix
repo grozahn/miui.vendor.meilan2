@@ -1,0 +1,14 @@
+#!/system/bin/sh
+DRIVER=$(cat /sys/bus/platform/drivers/msensor/daemon)
+
+if [ ! -f "/system/bin/$DRIVER" ] ; then
+    echo "$DRIVER not found in /system/bin"
+    exit 255
+fi
+
+if ! ps | grep -q "$DRIVER" ; then
+    echo "loading driver $DRIVER"
+    "/system/bin/$DRIVER" &
+else
+    echo "$DRIVER already loaded"
+fi

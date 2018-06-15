@@ -1,0 +1,13 @@
+#!/system/bin/sh
+
+chmod 666 /sys/class/meizu/ps/ps_calibration
+chmod 0666 /sys/class/meizu/ps/ps_calibration
+
+echo 1 > /sys/class/meizu/ps/ps_calibration
+
+chmod 666 /sys/class/meizu/ps/ps_calibration
+chmod 0666 /sys/class/meizu/ps/ps_calibration
+
+echo 1 > /sys/class/meizu/ps/ps_calibration
+
+chmod 0660 /sys/class/meizu/ps/ps_calibration
